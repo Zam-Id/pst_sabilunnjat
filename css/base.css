@@ -1,0 +1,312 @@
+@charset "UTF-8";
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap");
+
+/*!
+* Website Pesantren Sabilunnajat - Base Styles
+*/
+
+/* Variables & Root */
+:root {
+  /* Font Families */
+  --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-secondary: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-slab: "Roboto Slab", serif;
+  
+  /* Typography Scale */
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.75rem;
+  --h4-font-size: 1.5rem;
+  --h5-font-size: 1.25rem;
+  --base-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  
+  /* Line Heights */
+  --heading-line-height: 1.2;
+  --body-line-height: 1.5;
+  
+  /* Spacing */
+  --section-spacing: 4rem;
+  --element-spacing: 1.5rem;
+  --component-spacing: 1rem;
+  
+  /* Colors */
+  --bs-primary: #3f6ca4;
+  --bs-primary-dark: #335f8b;
+  --bs-secondary: #6c757d;
+  --bs-dark: #212529;
+  --bs-light: #f8f9fa;
+  --bs-white: #fff;
+  --bs-success: #28a745;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-info: #17a2b8;
+  --bs-border-color: #dee2e6;
+  --bs-body-bg: #f5f5f5;
+  --bs-body-color: #212529;
+  
+  /* Custom Colors */
+  --custom-green-soft: #f0f8f5;
+  --custom-green-dark: #2c5f2d;
+  --custom-gray-light: #e0e0e0;
+  --custom-gray-medium: #777;
+  --custom-gradient-start: #16a085;
+  --custom-gradient-end: #2980b9;
+  --custom-bg-light: #f0f0f0;
+  --custom-bg-lighter: #f5f5f5;
+  --custom-bg-dark: #e8e8e8;
+  --custom-card-bg: #f2f2f2;
+  --custom-hover-bg: #e5e5e5;
+  
+  /* Behavior */
+  scroll-behavior: auto;
+}
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--base-font-size);
+  font-weight: 400;
+  line-height: var(--body-line-height);
+  color: var(--bs-dark);
+  background-color: var(--bs-white);
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+  color: var(--bs-primary);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--component-spacing);
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Links */
+a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--bs-primary-dark);
+  text-decoration: underline;
+}
+
+/* Images & Media */
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  border: 0;
+}
+
+/* Tables */
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  vertical-align: top;
+}
+
+th {
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Grid System */
+.container {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.75rem;
+}
+
+[class*="col-"] {
+  padding: 0.75rem;
+}
+
+/* Section Styles */
+section {
+  padding: var(--section-spacing) 0;
+}
+
+.section-heading {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--element-spacing);
+  text-align: center;
+}
+
+.section-subheading {
+  font-size: var(--h5-font-size);
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: var(--section-spacing);
+  text-align: center;
+  color: var(--bs-secondary);
+}
+
+/* Utility Classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Spacing Utilities */
+.mb-2 { margin-bottom: var(--component-spacing); }
+.mb-3 { margin-bottom: var(--element-spacing); }
+.mb-4 { margin-bottom: calc(var(--element-spacing) * 1.5); }
+.mb-5 { margin-bottom: var(--section-spacing); }
+.mt-2 { margin-top: var(--component-spacing); }
+.mt-3 { margin-top: var(--element-spacing); }
+.mt-4 { margin-top: calc(var(--element-spacing) * 1.5); }
+.mt-5 { margin-top: var(--section-spacing); }
+.py-4 {
+  padding-top: calc(var(--element-spacing) * 1.5);
+  padding-bottom: calc(var(--element-spacing) * 1.5);
+}
+
+/* Aspect Ratio */
+.ratio {
+  position: relative;
+  width: 100%;
+}
+
+.ratio::before {
+  display: block;
+  padding-top: var(--aspect-ratio);
+  content: "";
+}
+
+.ratio > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ratio-16x9 {
+  --aspect-ratio: 56.25%;
+}
+
+/* Modal Base */
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 50%);
+  z-index: 1040;
+}
+
+/* Responsive Breakpoints */
+@media (width >= 576px) {
+  .container { max-width: 540px; }
+  .col-sm-6 { width: 50%; }
+}
+
+@media (width >= 768px) {
+  .container { max-width: 720px; }
+  .col-md-6 { width: 50%; }
+  .col-md-4 { width: 33.333333%; }
+}
+
+@media (width >= 992px) {
+  .container { max-width: 960px; }
+  .col-lg-4 { width: 33.333333%; }
+  .col-lg-3 { width: 25%; }
+}
+
+@media (width >= 1200px) {
+  .container { max-width: 1140px; }
+  h2, .h2 { font-size: 2rem; }
+  h3, .h3 { font-size: 1.75rem; }
+  h4, .h4 { font-size: 1.5rem; }
+}
+
+@media (width <= 576px) {
+  :root {
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.5rem;
+    --h4-font-size: 1.25rem;
+    --h5-font-size: 1.1rem;
+    --base-font-size: 0.9375rem;
+    --section-spacing: 2rem;
+    --element-spacing: 1rem;
+    --component-spacing: 0.75rem;
+  }
+  
+  .row {
+    margin: -0.5rem;
+  }
+
+  [class*="col-"] {
+    padding: 0.5rem;
+  }
+}
