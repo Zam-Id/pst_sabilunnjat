@@ -1,0 +1,52 @@
+{
+  "name": "website-sabilunnajat",
+  "version": "1.0.0",
+  "description": "Website Pesantren Sabilunnajat",
+  "scripts": {
+    "purge": "purgecss --config ./purgecss.config.js",
+    "lint:js": "eslint js/",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:html": "htmlhint \"*.html\"",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "prefix": "postcss css/*.css --use autoprefixer -d css/prefixed/",
+    "format:css": "prettier --write \"css/*.css\"",
+    "prefix:css": "postcss \"css/*.css\" --use autoprefixer -d css/prefixed/",
+    "css:clean": "npm run format:css && npm run dedupe:css && npm run prefix:css",
+    "dedupe:css": "postcss \"css/*.css\" --use postcss-combine-duplicated-selectors -d css/deduped/"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "eslint": "^8.57.0",
+    "eslint-plugin-html": "^8.1.2",
+    "htmlhint": "^1.1.4",
+    "postcss": "^8.5.1",
+    "postcss-cli": "^11.0.0",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-merge-rules": "^7.0.4",
+    "prettier": "^3.4.2",
+    "purgecss": "^5.0.0",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0"
+  },
+  "main": "purgecss.config.js",
+  "dependencies": {
+    "balanced-match": "^1.0.2",
+    "brace-expansion": "^2.0.1",
+    "cssesc": "^3.0.0",
+    "fs.realpath": "^1.0.0",
+    "inflight": "^1.0.6",
+    "inherits": "^2.0.4",
+    "nanoid": "^3.3.8",
+    "once": "^1.4.0",
+    "picocolors": "^1.1.1",
+    "postcss-selector-parser": "^6.1.2",
+    "source-map-js": "^1.2.1",
+    "util-deprecate": "^1.0.2",
+    "wrappy": "^1.0.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

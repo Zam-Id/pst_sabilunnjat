@@ -1,0 +1,35 @@
+{
+  "prefix": "bs-",
+  "css": {
+    "grid": true,
+    "reboot": true,
+    "type": true,
+    "images": true,
+    "containers": true,
+    "buttons": true,
+    "transitions": true,
+    "nav": true,
+    "navbar": true,
+    "card": true,
+    "carousel": true,
+    "utilities": {
+      "display": true,
+      "flex": true,
+      "spacing": true,
+      "text": true,
+      "background": true
+    }
+  },
+  "js": {
+    "button": true,
+    "collapse": true,
+    "dropdown": true,
+    "modal": true,
+    "scrollspy": true,
+    "carousel": true,
+    "toast": false,
+    "tooltip": false,
+    "popover": false,
+    "tab": false
+  }
+} 
